@@ -1,0 +1,20 @@
+{
+   "name": "iobroker.googleauth",
+   "description": "ioBroker Google Authentication",
+   "version": "0.1.0",
+   "keywords": [
+      "ioBroker",
+      "Smarthome",
+      "Home Automation",
+      "Adapter",
+      "web",
+      "Authentication",
+      "Google"
+   ],
+   "author": "Armin Junge",
+   "license": "MIT",
+   "contributors": [],
+   "dependencies": {
+      "passport-google-oauth20": "~2.0.0"
+   }
+}

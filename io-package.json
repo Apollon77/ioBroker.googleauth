@@ -1,0 +1,70 @@
+{
+   "common": {
+      "name": "googleauth",
+      "version": "0.1.0",
+      "news": {
+         "0.0.1": {
+            "en": "Alpha",
+            "de": "Alpha"
+         },
+         "0.1.0": {
+            "en": "Beta",
+            "de": "Beta"
+         },
+         "1.0.0": {
+            "en": "First release",
+            "de": "Erstveröffentlichung"
+         }
+      },
+      "title": "Google Authentication",
+      "titleLang": {
+         "en": "Google Authentication",
+         "de": "Authentifizierung per Google"
+      },
+      "desc": {
+         "en": "Login on webserver via your Google Account",
+         "de": "Melde dich am webserver mit deinem Google Account an"
+      },
+      "authors": [
+         "Armin Junge <armin.junge.81@gmail.com>"
+      ],
+      "keywords": [
+         "web",
+         "Authentication",
+         "Google"
+      ],
+      "license": "MIT",
+      "platform": "Javascript/Node.js",
+      "icon": "admin/logo-google.svg",
+      "enabled": true,
+      "extIcon": "https://raw.githubusercontent.com/Vertumnus/ioBroker.googleauth/master/admin/logo-google.svg",
+      "readme": "https://raw.githubusercontent.com/Vertumnus/ioBroker.googleauth/master/README.md",
+      "loglevel": "info",
+      "mode": "extension",
+      "singleton": true,
+      "type": "general",
+      "webExtension": "webextension.js",
+      "onlyWWW": true,
+      "compact": true,
+      "materialize": true,
+      "dependencies": [
+         {
+            "admin": ">=4.0.9",
+            "web": ">=3.0.7"
+         }
+      ],
+      "restartAdapters": ["web"],
+      "protectedNative": [
+         "clientId",
+         "clientSecret"
+      ]
+   },
+   "native": {
+      "webInstance": "*",
+      "clientId": "",
+      "clientSecret": "",
+      "proxy": false
+   },
+   "objects": [],
+   "instanceObjects": []
+}
