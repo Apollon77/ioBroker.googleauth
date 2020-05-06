@@ -11,8 +11,11 @@
       "Authentication",
       "Google"
    ],
+   "homepage": "https://github.com/Vertumnus/ioBroker.googleauth",
+   "bugs": "https://github.com/Vertumnus/ioBroker.googleauth/issues",
    "author": "Armin Junge",
    "license": "MIT",
+   "repository": "github:Vertumnus/ioBroker.googleauth",
    "contributors": [],
    "dependencies": {
       "passport-google-oauth20": "~2.0.0"
