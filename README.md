@@ -37,6 +37,7 @@ But, here you get a shortened guidance:
 After the creation of the application you get the *client id* and *client secret*, which you need in the next step.
 
 > __Hints to authorized redirect URI__
+>
 > You can use several redirect URIs. The only thing which is always the same, is the fixed route /login/google/cb.
 > The localhost is also allowed. You can use it for test purposes on your local system.
 > But in general you need a host name with a top level domain (like .com or .org), so you need to configure a fitting name for your ioBroker server in your network like: iobroker.mynetwork.net.
