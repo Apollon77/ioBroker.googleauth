@@ -7,12 +7,8 @@ systemDictionary = {
       "de": "Alle"
    },
    "WebAdapter": {
-      "en": "Extended WEB adapter",
+      "en": "Extended web adapter",
       "de": "Erweiterte Web Adapter"
-   },
-   "Route": {
-      "en": "Route path",
-      "de": "Routenpfad"
    },
    "ClientId": {
       "en": "Client ID",
@@ -21,9 +17,5 @@ systemDictionary = {
    "ClientSecret": {
       "en": "Client Secret",
       "de": "Clientschlüssel"
-   },
-   "Proxy": {
-      "en": "Proxy",
-      "de": "Proxy"
    }
 };

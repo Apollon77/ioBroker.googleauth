@@ -62,8 +62,7 @@
    "native": {
       "webInstance": "*",
       "clientId": "",
-      "clientSecret": "",
-      "proxy": false
+      "clientSecret": ""
    },
    "objects": [],
    "instanceObjects": []
