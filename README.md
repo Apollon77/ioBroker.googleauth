@@ -4,6 +4,7 @@
 
 [![NPM version](http://img.shields.io/npm/v/iobroker.googleauth.svg)](https://www.npmjs.com/package/iobroker.googleauth)
 [![Downloads](https://img.shields.io/npm/dm/iobroker.googleauth.svg)](https://www.npmjs.com/package/iobroker.googleauth)
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/9c7ca543cf1b48a8837cc14adb50a264)](https://www.codacy.com/manual/armin.junge.81/ioBroker.googleauth?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=Vertumnus/ioBroker.googleauth&amp;utm_campaign=Badge_Grade)
 
 [![NPM](https://nodei.co/npm/iobroker.googleauth.png?downloads=true)](https://nodei.co/npm/iobroker.googleauth/)
 
@@ -11,16 +12,17 @@ This adapter is an extension on the [web adapter](https://github.com/ioBroker/io
 It enables a "Sign in with Google" Button on the login page of the ioBroker web server.
 Which enables you to login with your Google account.
 
-Of course the extension is only usefull if you have activated the authentication at your ioBroker web server.
+Of course the extension is only useful, if you have activated the authentication at your ioBroker web server.
 
 ## Configuration
 
 ### Google API
 
-First of all you need to create an application in the [Google Developers Console](https://console.developers.google.com/).
+First of all, you need to create an application in the [Google Developers Console](https://console.developers.google.com/).
 This way you get a *client id* and a *client secret*, which you need to make the Google Sign In work.
 You can find a [Guide](https://developers.google.com/identity/protocols/oauth2/web-server) at Google Developers Page.
 But, here you get a shortened guidance:
+
 1. Open [Google Developers Console](https://console.developers.google.com/) (if needed, login with your Google Account)
 2. Select your prefered project or create a new one
 3. Go to the Credentials page
@@ -28,11 +30,12 @@ But, here you get a shortened guidance:
 5. Select the **Web application** application type
 6. Give your application a name (e.g. ioBroker)
 7. Specify an authorized redirect URI
+
    * You need the used protocol (http or https)
    * your host name (e.g. iobroker.example.com)
    * your used port (e.g. 8090)
    * and the fixed route /login/google/cb
-   > Full Example: https://iobroker.example.com:8090/login/google/cb
+     > Full Example: https://iobroker.example.com:8090/login/google/cb
 
 After the creation of the application you get the *client id* and *client secret*, which you need in the next step.
 
@@ -65,7 +68,7 @@ This extension overrules the login screen of the web server. You do not need to 
 The extension enhances the login screen by the checkbox **First time login with Account** and the button
 **Sign in with Google**.
 
-If you sign in with your Google Account the first time you have to check on the **First time** checkbox and
+If you sign in with your Google Account the first time, you have to check on the **First time** checkbox and
 you have to specify your *username* and *password*. This is necessary to associate your Google Account to your
 user profil in ioBroker. Instead of the **Log in** button you must push the **Sign in with Google** button.
 

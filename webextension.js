@@ -1,5 +1,3 @@
-/* global __dirname */
-
 const path = require('path')
 const express = require('express')
 var passport = require('passport')
@@ -37,8 +35,7 @@ class WebExtension {
             }
 
             // try to find the user with the given google user id
-            for(let sUserId in oUsers){
-               let oUser = oUsers[sUserId]
+            for(let [sUserId, oUser] of Object.entries(oUsers)){
                if(oUser.common && oUser.common.googleId === profile.id)
                   return done(null, sUserId.split('.')[2])
             }
