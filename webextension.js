@@ -1,3 +1,7 @@
+/*eslint semi: ["error", "never", { "beforeStatementContinuationChars": "never"}] */
+/*eslint quotes: ["error", "single"]*/
+/*eslint-env es6*/
+
 const path = require('path')
 const express = require('express')
 var passport = require('passport')
@@ -36,8 +40,9 @@ class WebExtension {
 
             // try to find the user with the given google user id
             for(let [sUserId, oUser] of Object.entries(oUsers)){
-               if(oUser.common && oUser.common.googleId === profile.id)
+               if(oUser.common && oUser.common.googleId === profile.id){
                   return done(null, sUserId.split('.')[2])
+               }
             }
             
             // No user found, so take the local logged in user and assign google id
@@ -49,8 +54,9 @@ class WebExtension {
                   googleId: profile.id
                }
             }, (err, oObject) => {
-               if(err)
+               if(err){
                   return done(err)
+               }
                adapter.log.info(instanceSettings.common.name + ': User ' + req.user + ' associated to Google with ID ' + oObject.value.common.googleId)
                done(null, req.user)
             })
@@ -61,8 +67,9 @@ class WebExtension {
       
       app.get('/login(/index.html)?', (req, res, next) => {
          // try to override login screen
-         if(req.isAuthenticated())
+         if(req.isAuthenticated()){
             return res.redirect((req.query.href)?req.query.href:'/')
+         }
          res.sendFile(path.join(__dirname, 'www/views/login.html'))
       })
 
