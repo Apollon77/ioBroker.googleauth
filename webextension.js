@@ -4,8 +4,8 @@
 
 const path = require('path')
 const express = require('express')
-var passport = require('passport')
-var GoogleStrategy = require('passport-google-oauth20').Strategy
+const passport = require('passport')
+const GoogleStrategy = require('passport-google-oauth20').Strategy
 
 /**
  * Extension for Web Server
@@ -46,8 +46,9 @@ class WebExtension {
             }
             
             // No user found, so take the local logged in user and assign google id
-            if(!req.user) // no local logged in user? -> error
+            if(!req.user){ // no local logged in user? -> error
                return done(null, false, { error: 'Login2Register' })
+            }
             
             adapter.extendForeignObject('system.user.' + req.user, {
                common: {
