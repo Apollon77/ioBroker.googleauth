@@ -38,7 +38,7 @@
       "loglevel": "info",
       "mode": "extension",
       "singleton": true,
-      "type": "general",
+      "type": "utility",
       "webExtension": "webextension.js",
       "onlyWWW": true,
       "compact": true,
