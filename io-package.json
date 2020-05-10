@@ -1,11 +1,15 @@
 {
    "common": {
       "name": "googleauth",
-      "version": "0.1.1",
+      "version": "0.2.0",
       "news": {
          "0.1.1": {
             "en": "Beta",
             "de": "Beta"
+         },
+         "0.2.0": {
+            "en": "Extraction of login page into own web extension adapter (weblogin)",
+            "de": "Auslagerung der Anmeldeseite in einen eigenen Web-Extension-Adapter (weblogin)"
          }
       },
       "title": "Google Authentication",

@@ -64,21 +64,16 @@ class WebExtension {
          })
       }))
       
+      // provide image for sign in
       app.use('/login/google/img', express.static(path.join(__dirname, 'www/img')))
       
-      app.get('/login(/index.html)?', (req, res, next) => {
-         // try to override login screen
-         if(req.isAuthenticated()){
-            return res.redirect((req.query.href)?req.query.href:'/')
-         }
-         res.sendFile(path.join(__dirname, 'www/views/login.html'))
-      })
-
       app.post('/login/google', (req, res, next) => {
+         // on first time login handle next middleware (local authentication) in calling chain,
+         // otherwise handle immediately next fitting route (google authentication)
          next(req.body.firsttime?null:'route')
       }, passport.authenticate('local'))
       app.post('/login/google', (req, res, next) => {
-         let oRedirectMatch = /(\?|&)href=(\/[-_a-zA-Z0-9%./]*)/.exec(decodeURIComponent(req.body.origin))
+         let oRedirectMatch = /(\?|&)?href=(\/[-_a-zA-Z0-9%./]*)/.exec(decodeURIComponent(req.body.origin))
          passport.authenticate('google', {
             scope: ['profile'],
             state: (oRedirectMatch)?oRedirectMatch[2]:null  // take value of parameter href from second submatch
@@ -88,6 +83,7 @@ class WebExtension {
       app.get('/login/google/cb', passport.authenticate('google', {
          failureRedirect: '/login'
       }), (req, res) => {
+         // if origin url as state was transfered, redirect there, otherwise to root
          res.redirect((req.query.state)?req.query.state:'/')
       })
       

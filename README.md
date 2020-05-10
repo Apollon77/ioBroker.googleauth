@@ -8,9 +8,8 @@
 
 [![NPM](https://nodei.co/npm/iobroker.googleauth.png?downloads=true)](https://nodei.co/npm/iobroker.googleauth/)
 
-This adapter is an extension on the [web adapter](https://github.com/ioBroker/ioBroker.web). 
-It enables a "Sign in with Google" Button on the login page of the ioBroker web server.
-Which enables you to login with your Google account.
+This adapter is an extension on the [web adapter](https://github.com/ioBroker/ioBroker.web). It enables you to login with your Google account. 
+To extend the login page with an appropriate "Sign in with Google" Button, use the web extension adapter [weblogin](https://github.com/Vertumnus/ioBroker.weblogin).
 
 Of course the extension is only useful, if you have activated the authentication at your ioBroker web server.
 
@@ -35,7 +34,7 @@ But, here you get a shortened guidance:
    * your host name (e.g. iobroker.example.com)
    * your used port (e.g. 8090)
    * and the fixed route /login/google/cb
-     > Full Example: https://iobroker.example.com:8090/login/google/cb
+     > Full Example: _https://iobroker.example.com:8090/login/google/cb_
 
 After the creation of the application you get the *client id* and *client secret*, which you need in the next step.
 
@@ -64,17 +63,19 @@ In this field you have to specify the *client secret* from your application.
 
 ## Usage
 
-This extension overrules the login screen of the web server. You do not need to call a special route to login.
-The extension enhances the login screen by the checkbox **First time login with Account** and the button
-**Sign in with Google**.
+To use this extension in a meaningful manner, it is recommanded to use also the [weblogin adapter](https://github.com/Vertumnus/ioBroker.weblogin).
+It provides on the login page of the web server a checkbox named **First time login with Account** and
+the button **Sign in with Google**, if configured accordingly.
+
+> Otherwise you have to manage it by your own to make the google authentication work.
 
 If you sign in with your Google Account the first time, you have to check on the **First time** checkbox and
 you have to specify your *username* and *password*. This is necessary to associate your Google Account to your
-user profil in ioBroker. Instead of the **Log in** button you must push the **Sign in with Google** button.
+user profile in ioBroker. Instead of the **Log in** button you must push the **Sign in with Google** button.
 
-After this first time login, on further logins you only need to push the **Sign in with Google** button.
+After this first time login, on further logins, you only need to push the **Sign in with Google** button.
 
-> If you are currently not logged in your Google Account, you will be redirected to Google to log in.
+> If you are currently not logged in into your Google Account, you will be redirected to Google to log in.
 
 ## License
 MIT License
