@@ -7,6 +7,8 @@ const express = require('express')
 const passport = require('passport')
 const GoogleStrategy = require('passport-google-oauth20').Strategy
 
+const ONE_MONTH_SEC = 30 * 24 * 3600
+
 /**
  * Extension for Web Server
  * Register Google Authentication at passport
@@ -74,17 +76,29 @@ class WebExtension {
       }, passport.authenticate('local'))
       app.post('/login/google', (req, res, next) => {
          let oRedirectMatch = /(\?|&)?href=(\/[-_a-zA-Z0-9%./]*)/.exec(decodeURIComponent(req.body.origin))
+         let bStayLoggedIn = req.body.stayloggedin === 'true' || req.body.stayloggedin === true || req.body.stayloggedin === 'on'
          passport.authenticate('google', {
             scope: ['profile'],
-            state: (oRedirectMatch)?oRedirectMatch[2]:null  // take value of parameter href from second submatch
+            state: JSON.stringify({ 
+               href: (oRedirectMatch)?oRedirectMatch[2]:null, // take value of parameter href from second submatch
+               stay: bStayLoggedIn
+            })
          })(req, res, next)
       })
       
       app.get('/login/google/cb', passport.authenticate('google', {
          failureRedirect: '/login'
       }), (req, res) => {
-         // if origin url as state was transfered, redirect there, otherwise to root
-         res.redirect((req.query.state)?req.query.state:'/')
+         let oState = JSON.parse(req.query.state)
+         let sTarget = '/'
+         if(oState){
+            sTarget = oState.href || sTarget
+            req.session.cookie.maxAge = webSettings.ttl * 1000
+            if(oState.stay && ONE_MONTH_SEC > webSettings.ttl){
+               req.session.cookie.maxAge = ONE_MONTH_SEC * 1000
+            }
+         }
+         res.redirect(sTarget)
       })
       
       adapter.log.info('Google Authentication is ready')
