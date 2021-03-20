@@ -41,18 +41,24 @@ class WebExtension {
             }
 
             // try to find the user with the given google user id
+            // and for the initial case by local login take the user id (for object access)
+            let sUserObjectId
             for(let [sUserId, oUser] of Object.entries(oUsers)){
                if(oUser.common && oUser.common.googleId === profile.id){
-                  return done(null, sUserId.split('.')[2])
+                  return done(null, oUser.common.name)
+               }
+               if(oUser.common.name === req.user){
+                  sUserObjectId = sUserId
                }
             }
-            
             // No user found, so take the local logged in user and assign google id
-            if(!req.user){ // no local logged in user? -> error
+
+            // no local logged in user? -> error
+            if(!req.user || !sUserObjectId){ 
                return done(null, false, { error: 'Login2Register' })
             }
             
-            adapter.extendForeignObject('system.user.' + req.user, {
+            adapter.extendForeignObject(sUserObjectId, {
                common: {
                   googleId: profile.id
                }
