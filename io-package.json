@@ -4,22 +4,54 @@
       "version": "0.2.1",
       "news": {
          "0.1.1": {
-            "en": "Beta",
-            "de": "Beta"
+            "en": "Ready for Beta",
+            "de": "Bereit für die Beta",
+            "ru": "Готов к бета-версии",
+            "pt": "Pronto para Beta",
+            "nl": "Klaar voor bèta",
+            "fr": "Prêt pour la bêta",
+            "it": "Pronto per la beta",
+            "es": "Listo para Beta",
+            "pl": "Gotowy do wersji beta",
+            "zh-cn": "准备测试版"
          },
          "0.2.0": {
             "en": "Extraction of login page into own web extension adapter (weblogin)",
-            "de": "Auslagerung der Anmeldeseite in einen eigenen Web-Extension-Adapter (weblogin)"
+            "de": "Extraktion der Anmeldeseite in einen eigenen Web-Erweiterungsadapter (weblogin)",
+            "ru": "Извлечение страницы входа в собственный адаптер веб-расширения (weblogin)",
+            "pt": "Extração da página de login no próprio adaptador de extensão da web (weblogin)",
+            "nl": "Extractie van inlogpagina in eigen webextensie-adapter (weblogin)",
+            "fr": "Extraction de la page de connexion dans son propre adaptateur d'extension Web (weblogin)",
+            "it": "Estrazione della pagina di accesso nel proprio adattatore di estensione web (weblogin)",
+            "es": "Extracción de la página de inicio de sesión en el propio adaptador de extensión web (weblogin)",
+            "pl": "Wyodrębnienie strony logowania do własnego adaptera rozszerzenia internetowego (weblogin)",
+            "zh-cn": "将登录页面提取到自己的Web扩展适配器（weblogin）中"
          }
       },
       "title": "Google Authentication",
       "titleLang": {
          "en": "Google Authentication",
-         "de": "Authentifizierung per Google"
+         "de": "Google-Authentifizierung",
+         "ru": "Google аутентификация",
+         "pt": "Autenticação Google",
+         "nl": "Google-verificatie",
+         "fr": "Authentification Google",
+         "it": "Autenticazione di Google",
+         "es": "Autenticación de Google",
+         "pl": "Uwierzytelnianie Google",
+         "zh-cn": "Google认证"
       },
       "desc": {
          "en": "Login on webserver via your Google Account",
-         "de": "Melde dich am webserver mit deinem Google Account an"
+         "de": "Melde dich über dein Google-Konto auf dem Webserver an",
+         "ru": "Войдите на веб-сервер через свою учетную запись Google",
+         "pt": "Faça login no servidor da web por meio da sua conta do Google",
+         "nl": "Log in op de webserver via uw Google-account",
+         "fr": "Connectez-vous sur le serveur Web via votre compte Google",
+         "it": "Accedi al server web tramite il tuo account Google",
+         "es": "Inicie sesión en el servidor web a través de su cuenta de Google",
+         "pl": "Zaloguj się na serwerze internetowym za pośrednictwem swojego konta Google",
+         "zh-cn": "通过您的Google帐户在网络服务器上登录"
       },
       "authors": [
          "Armin Junge <armin.junge.81@gmail.com>"
@@ -45,16 +77,15 @@
       "materialize": true,
       "dependencies": [
          {
-            "admin": ">=4.0.9",
             "web": ">=3.0.7"
          }
       ],
-      "restartAdapters": ["web"],
-      "protectedNative": [
-         "clientId",
-         "clientSecret"
-      ]
+      "restartAdapters": ["web"]
    },
+   "protectedNative": [
+      "clientId",
+      "clientSecret"
+   ],
    "native": {
       "webInstance": "*",
       "clientId": "",
