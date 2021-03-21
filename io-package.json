@@ -1,7 +1,7 @@
 {
    "common": {
       "name": "googleauth",
-      "version": "0.2.1",
+      "version": "0.2.2",
       "news": {
          "0.1.1": {
             "en": "Ready for Beta",
@@ -26,6 +26,18 @@
             "es": "Extracción de la página de inicio de sesión en el propio adaptador de extensión web (weblogin)",
             "pl": "Wyodrębnienie strony logowania do własnego adaptera rozszerzenia internetowego (weblogin)",
             "zh-cn": "将登录页面提取到自己的Web扩展适配器（weblogin）中"
+         },
+         "0.2.2": {
+            "en": "Preparation for publishing in ioBroker.repositories",
+            "de": "Vorbereitung für die Veröffentlichung in ioBroker.repositories",
+            "ru": "Подготовка к публикации в ioBroker.repositories",
+            "pt": "Preparação para publicação em ioBroker.repositories",
+            "nl": "Voorbereiding voor publicatie in ioBroker.repositories",
+            "fr": "Préparation à la publication dans ioBroker.repositories",
+            "it": "Preparazione per la pubblicazione in ioBroker.repositories",
+            "es": "Preparación para publicar en ioBroker.repositories",
+            "pl": "Przygotowanie do publikacji w ioBroker.repositories",
+            "zh-cn": "准备在ioBroker.repositories中发布"
          }
       },
       "title": "Google Authentication",
@@ -77,7 +89,8 @@
       "materialize": true,
       "globalDependencies": [
          {
-            "admin": ">=4.0.9"            
+            "admin": ">=4.0.9",
+            "js-controller": ">=3.0.0"
          }
       ],
       "dependencies": [
@@ -89,6 +102,9 @@
    },
    "protectedNative": [
       "clientId",
+      "clientSecret"
+   ],
+   "encryptedNative": [
       "clientSecret"
    ],
    "native": {
