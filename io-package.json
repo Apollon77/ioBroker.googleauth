@@ -1,7 +1,7 @@
 {
    "common": {
       "name": "googleauth",
-      "version": "0.2.2",
+      "version": "0.2.3",
       "news": {
          "0.1.1": {
             "en": "Ready for Beta",
@@ -27,7 +27,7 @@
             "pl": "Wyodrębnienie strony logowania do własnego adaptera rozszerzenia internetowego (weblogin)",
             "zh-cn": "将登录页面提取到自己的Web扩展适配器（weblogin）中"
          },
-         "0.2.2": {
+         "0.2.3": {
             "en": "Preparation for publishing in ioBroker.repositories",
             "de": "Vorbereitung für die Veröffentlichung in ioBroker.repositories",
             "ru": "Подготовка к публикации в ioBroker.repositories",

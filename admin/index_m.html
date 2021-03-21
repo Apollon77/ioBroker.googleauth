@@ -20,6 +20,7 @@
       function load(settings, onChange) {
          // example: select elements with id=key and class=value and insert value
          if (!settings) return;
+         settings.clientSecret = decrypt(settings.clientSecret);
          $('.value').each(function () {
             var $key = $(this);
             var id = $key.attr('id');
@@ -64,6 +65,7 @@
                obj[$this.attr('id')] = $this.val();
             }
          });
+         obj.clientSecret = encrypt(obj.clientSecret);
          callback(obj);
       }
    </script>
@@ -99,7 +101,7 @@
          </div>
          <div class="col s12 m6 input-field">
             <i class="material-icons prefix">vpn_key</i>
-            <input class="value" type="text" id="clientSecret" />
+            <input class="value" type="password" id="clientSecret" />
             <label for="clientSecret" class="translate">ClientSecret</label>
          </div>
       </div>

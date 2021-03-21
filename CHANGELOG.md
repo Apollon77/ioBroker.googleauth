@@ -1,4 +1,4 @@
-## 0.2.2 (2021-03-21)
+## 0.2.3 (2021-03-21)
 
 Preparation for publishing in ioBroker.repositories
 
