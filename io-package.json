@@ -1,7 +1,7 @@
 {
    "common": {
       "name": "googleauth",
-      "version": "0.2.3",
+      "version": "0.3.0",
       "news": {
          "0.1.1": {
             "en": "Ready for Beta",
@@ -38,6 +38,18 @@
             "es": "Preparación para publicar en ioBroker.repositories",
             "pl": "Przygotowanie do publikacji w ioBroker.repositories",
             "zh-cn": "准备在ioBroker.repositories中发布"
+         },
+         "0.3.0": {
+            "en": "Moving googleId from common part to native part of user data",
+            "de": "Verschieben von googleId vom allgemeinen Teil zum nativen Teil der Benutzerdaten",
+            "ru": "Перенос googleId из общей части в собственную часть пользовательских данных",
+            "pt": "Movendo googleId da parte comum para a parte nativa dos dados do usuário",
+            "nl": "GoogleId verplaatsen van gemeenschappelijk deel naar native deel van gebruikersgegevens",
+            "fr": "Déplacement de googleId de la partie commune vers la partie native des données utilisateur",
+            "it": "Spostamento di googleId dalla parte comune alla parte nativa dei dati utente",
+            "es": "Mover googleId de la parte común a la parte nativa de los datos del usuario",
+            "pl": "Przenoszenie googleId z części wspólnej do natywnej części danych użytkownika",
+            "zh-cn": "将googleId从用户数据的通用部分移动到本机部分"
          }
       },
       "title": "Google Authentication",

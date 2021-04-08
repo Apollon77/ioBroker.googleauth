@@ -44,14 +44,17 @@ class WebExtension {
             // and for the initial case by local login take the user id (for object access)
             let sUserObjectId
             for(let [sUserId, oUser] of Object.entries(oUsers)){
-               if(oUser.common && oUser.common.googleId === profile.id){
+               if(oUser.native && oUser.native.googleId === profile.id){
                   return done(null, oUser.common.name)
                }
-               if(oUser.common.name === req.user){
+               // transform original user name into an id like user name (which is also applied by local login on req.user)
+               let sUserName = oUser.common.name.toString().replace(this.FORBIDDEN_CHARS, '_').replace(/\s/g, '_').replace(/\./g, '_').toLowerCase();
+               if(sUserName === req.user || sUserId === `system.user.${req.user}`){
                   sUserObjectId = sUserId
                }
             }
             // No user found, so take the local logged in user and assign google id
+            adapter.log.debug(instanceSettings.common.name + ': User=' + sUserObjectId + ', Loginname=' + req.user)
 
             // no local logged in user? -> error
             if(!req.user || !sUserObjectId){ 
@@ -59,14 +62,14 @@ class WebExtension {
             }
             
             adapter.extendForeignObject(sUserObjectId, {
-               common: {
+               native: {
                   googleId: profile.id
                }
             }, (err, oObject) => {
                if(err){
                   return done(err)
                }
-               adapter.log.info(instanceSettings.common.name + ': User ' + req.user + ' associated to Google with ID ' + oObject.value.common.googleId)
+               adapter.log.info(instanceSettings.common.name + ': User ' + req.user + ' associated to Google with ID ' + oObject.value.native.googleId)
                done(null, req.user)
             })
          })
