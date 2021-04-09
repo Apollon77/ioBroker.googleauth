@@ -1,7 +1,7 @@
 {
    "common": {
       "name": "googleauth",
-      "version": "0.3.0",
+      "version": "0.3.1",
       "news": {
          "0.1.1": {
             "en": "Ready for Beta",
@@ -101,13 +101,14 @@
       "materialize": true,
       "globalDependencies": [
          {
-            "admin": ">=4.0.9",
-            "js-controller": ">=3.0.0"
+            "admin": ">=4.0.9"
          }
       ],
       "dependencies": [
          {
-            "web": ">=3.0.7"
+            "js-controller": ">=3.0.0",
+            "web": ">=3.0.7",
+            "weblogin": ">=0.1.0"
          }
       ],
       "restartAdapters": ["web"]
