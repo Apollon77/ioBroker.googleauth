@@ -1,7 +1,7 @@
 {
    "common": {
       "name": "googleauth",
-      "version": "0.3.1",
+      "version": "0.3.2",
       "news": {
          "0.1.1": {
             "en": "Ready for Beta",
@@ -107,7 +107,7 @@
       "dependencies": [
          {
             "js-controller": ">=3.0.0",
-            "web": ">=3.0.7",
+            "web": ">=3.4.0",
             "weblogin": ">=0.1.0"
          }
       ],
