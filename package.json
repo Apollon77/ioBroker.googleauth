@@ -1,7 +1,7 @@
 {
    "name": "iobroker.googleauth",
    "description": "ioBroker Google Authentication",
-   "version": "0.3.2",
+   "version": "0.3.3",
    "keywords": [
       "ioBroker",
       "Smarthome",
@@ -17,7 +17,7 @@
    "license": "MIT",
    "repository": {
       "type": "git",
-      "url": "github:Vertumnus/ioBroker.googleauth"
+      "url": "https://github.com/Vertumnus/ioBroker.googleauth.git"
    },
    "contributors": [],
    "main": "webextension.js",

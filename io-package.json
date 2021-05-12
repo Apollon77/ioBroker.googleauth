@@ -1,7 +1,7 @@
 {
    "common": {
       "name": "googleauth",
-      "version": "0.3.2",
+      "version": "0.3.3",
       "news": {
          "0.1.1": {
             "en": "Ready for Beta",
@@ -50,6 +50,18 @@
             "es": "Mover googleId de la parte común a la parte nativa de los datos del usuario",
             "pl": "Przenoszenie googleId z części wspólnej do natywnej części danych użytkownika",
             "zh-cn": "将googleId从用户数据的通用部分移动到本机部分"
+         },
+         "0.3.3": {
+            "en": "Fixing some quality issues",
+            "de": "Behebung einiger Qualitätsprobleme",
+            "ru": "Исправление некоторых проблем с качеством",
+            "pt": "Corrigindo alguns problemas de qualidade",
+            "nl": "Enkele kwaliteitsproblemen oplossen",
+            "fr": "Résoudre certains problèmes de qualité",
+            "it": "Risolvere alcuni problemi di qualità",
+            "es": "Solucionar algunos problemas de calidad",
+            "pl": "Naprawianie niektórych problemów z jakością",
+            "zh-cn": "解决一些质量问题"
          }
       },
       "title": "Google Authentication",
@@ -89,8 +101,8 @@
       "platform": "Javascript/Node.js",
       "icon": "admin/logo-google.svg",
       "enabled": true,
-      "extIcon": "https://raw.githubusercontent.com/Vertumnus/ioBroker.googleauth/master/admin/logo-google.svg",
-      "readme": "https://raw.githubusercontent.com/Vertumnus/ioBroker.googleauth/master/README.md",
+      "extIcon": "https://github.com/Vertumnus/ioBroker.googleauth/blob/master/admin/logo-google.svg",
+      "readme": "https://github.com/Vertumnus/ioBroker.googleauth/blob/master/README.md",
       "loglevel": "info",
       "mode": "extension",
       "singleton": true,
@@ -99,6 +111,8 @@
       "onlyWWW": true,
       "compact": true,
       "materialize": true,
+      "connectionType": "local",
+      "dataSource": "assumption",
       "globalDependencies": [
          {
             "admin": ">=4.0.9"

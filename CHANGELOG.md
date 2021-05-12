@@ -1,3 +1,7 @@
+## 0.3.3 (2021-05-12)
+
+Fixing some quality issues
+
 ## 0.3.0 (2021-04-08)
 
 Moving googleId from common part to native part of user data
