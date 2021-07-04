@@ -44,11 +44,12 @@ class WebExtension {
             // and for the initial case by local login take the user id (for object access)
             let sUserObjectId
             for(let [sUserId, oUser] of Object.entries(oUsers)){
-               if(oUser.native && oUser.native.googleId === profile.id){
-                  return done(null, oUser.common.name)
-               }
                // transform original user name into an id like user name (which is also applied by local login on req.user)
                let sUserName = oUser.common.name.toString().replace(this.FORBIDDEN_CHARS, '_').replace(/\s/g, '_').replace(/\./g, '_').toLowerCase();
+
+               if(oUser.native && oUser.native.googleId === profile.id){
+                  return done(null, sUserName)
+               }
                if(sUserName === req.user || sUserId === `system.user.${req.user}`){
                   sUserObjectId = sUserId
                }
